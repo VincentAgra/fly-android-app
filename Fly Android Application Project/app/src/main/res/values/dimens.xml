@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- MainActivity RELATED DIMENSIONS -->
+    <!-- textView -->
+    <dimen name="dmn_app_name_tv">200dp</dimen>
+
+
+    <!-- SearchFlightsActivity RELATED DIMENSIONS -->
+    <!-- textView -->
+    <dimen name="dmn_user_departure_location_tv">200dp</dimen>
+</resources>

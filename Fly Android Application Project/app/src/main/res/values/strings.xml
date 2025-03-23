@@ -1,0 +1,26 @@
+<resources>
+    <!-- application's name -->
+    <string name="str_app_name">Fly</string>
+    <!-- bottom nav button's name -->
+    <string name="str_bottom_nav_home_button">Home</string>
+    <string name="str_bottom_nav_search_flights_button">Search Flights</string>
+    <string name="str_bottom_saved_flights_button">Saved Flights</string>
+
+
+    <!-- MainActivity RELATED STRINGS -->
+    <!-- textView -->
+    <string name="str_app_name_tv">FLY</string>
+    <!-- button -->
+    <string name="str_search_flights_btn">SEARCH CHEAP FLIGHTS</string>
+    <string name="str_saved_flights_btn">VIEW YOUR SAVED FLIGHTS</string>
+
+    <!-- SearchFlightsActivity RELATED STRINGS -->
+    <!-- textView -->
+    <string name="str_user_departure_location_tv">TRAVELING FROM</string>
+    <string name="str_user_travel_destination_tv">TRAVELING TO</string>
+    <!-- editText -->
+    <string name="str_enter_user_departure_location_et">ADD DETAILS HERE</string>
+    <!-- button -->
+    <string name="str_submit_user_details_btn">SUBMIT</string>
+
+</resources>

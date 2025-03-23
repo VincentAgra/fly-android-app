@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_layout_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- application's name
+    <TextView
+        android:id="@+id/tv_app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_search_flights"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/dmn_app_name_tv"
+        android:text="@string/str_app_name_tv" />
+
+     go to search page button
+    <Button
+        android:id="@+id/btn_search_flights"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_app_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:text="@string/str_search_flights_btn" />
+
+     go to saved flights page button
+    <Button
+        android:id="@+id/btn_saved_flights"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_search_flights"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:text="@string/str_saved_flights_btn" /> -->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_get_started"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+
+        app:icon="@drawable/bottom_nav_botton_search_flights"
+        app:iconSize="50dp"
+
+        app:layout_constraintTop_toTopOf="@id/activity_layout_main"
+        app:layout_constraintBottom_toTopOf="@id/view_bottom_nav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"        />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/view_bottom_nav"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintBottom_toBottomOf="@id/activity_layout_main"
+
+        app:menu="@menu/bottom_nav_menu" />
+</androidx.constraintlayout.widget.ConstraintLayout>

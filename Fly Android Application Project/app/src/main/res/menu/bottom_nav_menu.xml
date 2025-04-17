@@ -1,23 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
 
     <item
         android:id="@+id/menu_home"
-        android:title="@string/str_bottom_nav_home_button"
+
+        android:title="@string/str_bottom_nav_home_btn"
         android:icon="@drawable/bottom_nav_button_home"
+
         app:labelVisibilityMode="unlabeled"/>
+
 
     <item
         android:id="@+id/menu_search_flights"
-        android:title="@string/str_bottom_nav_search_flights_button"
+
+        android:title="@string/str_bottom_nav_search_flights_btn"
         android:icon="@drawable/bottom_nav_botton_search_flights"
-        app:labelVisibilityMode="unlabeled"/>
+
+        app:labelVisibilityMode="unlabeled" />
+
 
     <item
         android:id="@+id/menu_saved_flights"
-        android:title="@string/str_bottom_saved_flights_button"
-        android:icon="@drawable/bottom_nav_button_saved_tickets"
-        app:labelVisibilityMode="unlabeled"/>
 
+        android:title="@string/str_bottom_saved_flights_btn"
+        android:icon="@drawable/bottom_nav_button_saved_tickets"
+
+        app:labelVisibilityMode="unlabeled" />
 </menu>

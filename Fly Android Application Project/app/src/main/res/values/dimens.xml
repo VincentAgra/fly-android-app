@@ -2,10 +2,14 @@
 <resources>
     <!-- MainActivity RELATED DIMENSIONS -->
     <!-- textView -->
-    <dimen name="dmn_app_name_tv">200dp</dimen>
+    <!-- material button -->
+    <dimen name="dmn_iconSize_iconSize">50dp</dimen>
 
 
     <!-- SearchFlightsActivity RELATED DIMENSIONS -->
     <!-- textView -->
-    <dimen name="dmn_user_departure_location_tv">200dp</dimen>
+    <dimen name="dmn_user_departure_location_tv_marginTop">100dp</dimen>
+    <dimen name="dmn_select_date_tv_marginTop">100dp</dimen>
+    <!-- button -->
+    <dimen name="dmn_select_date_btn_marginTop">600dp</dimen>
 </resources>

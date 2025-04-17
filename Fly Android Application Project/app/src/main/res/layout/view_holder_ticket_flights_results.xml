@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
-    android:id="@+id/view_holder_saved_flights"
+    android:id="@+id/view_holder_flight_tickets_results"
 
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -26,7 +26,7 @@
         android:text="Economy Class"
         android:padding="8dp"
         android:background="#2196F3"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"/>
 
 
     <TextView
@@ -42,7 +42,7 @@
         android:text="OUTBOUND FLIGHT"
         android:padding="8dp"
         android:background="#2196F3"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"/>
 
 
     <TextView
@@ -146,7 +146,7 @@
 
 
     <View
-        android:id="@+id/saved_flights_viewHolder_simpleDiv"
+        android:id="@+id/flights_tickets_results_viewHolder_simpleDiv"
 
         android:layout_width="match_parent"
         android:layout_height="2dp"
@@ -159,6 +159,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
 
+
         android:background="#E0E0E0"/>
 
 
@@ -168,7 +169,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        app:layout_constraintTop_toBottomOf="@id/saved_flights_viewHolder_simpleDiv"
+        app:layout_constraintTop_toBottomOf="@id/flights_tickets_results_viewHolder_simpleDiv"
         app:layout_constraintBottom_toTopOf="@id/input_departure_time_return_flight"
         app:layout_constraintStart_toStartOf="parent"
 
@@ -285,15 +286,28 @@
         android:layout_height="wrap_content"
 
         app:layout_constraintTop_toBottomOf="@id/input_departure_location_return_flight"
-        app:layout_constraintBottom_toTopOf="@id/saved_flights_viewHolder_materialDiv"
+        app:layout_constraintBottom_toTopOf="@id/flights_tickets_results_viewHolder_materialDiv"
         app:layout_constraintStart_toStartOf="parent"
 
         android:text="1,500$"
         android:textSize="30dp"/>
 
 
+    <Button
+        android:id="@+id/btn_save_ticket"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toBottomOf="@id/input_departure_location_return_flight"
+        app:layout_constraintBottom_toTopOf="@id/flights_tickets_results_viewHolder_materialDiv"
+        app:layout_constraintStart_toEndOf="@id/tv_ticket_price"
+
+        android:text="SAVE FLIGHT"/>
+
+
     <com.google.android.material.divider.MaterialDivider
-        android:id="@+id/saved_flights_viewHolder_materialDiv"
+        android:id="@+id/flights_tickets_results_viewHolder_materialDiv"
 
         android:layout_width="match_parent"
         android:layout_height="2dp"

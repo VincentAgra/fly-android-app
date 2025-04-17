@@ -2,59 +2,46 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+
     android:id="@+id/activity_layout_main"
+
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
 
-    <!-- application's name
-    <TextView
-        android:id="@+id/tv_app_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    android:fitsSystemWindows="true"
+
+    android:background="#2EB4D1">
+
+
+    <include
+        android:id="@+id/activity_toolbar"
+
+        layout="@layout/custom_tool_bar"
+
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/btn_search_flights"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="@dimen/dmn_app_name_tv"
-        android:text="@string/str_app_name_tv" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-     go to search page button
-    <Button
-        android:id="@+id/btn_search_flights"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tv_app_name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"
-        android:text="@string/str_search_flights_btn" />
-
-     go to saved flights page button
-    <Button
-        android:id="@+id/btn_saved_flights"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/btn_search_flights"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"
-        android:text="@string/str_saved_flights_btn" /> -->
 
     <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+
         android:id="@+id/btn_get_started"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-
         app:icon="@drawable/bottom_nav_botton_search_flights"
-        app:iconSize="50dp"
+        app:iconSize="@dimen/dmn_iconSize_iconSize"
 
         app:layout_constraintTop_toTopOf="@id/activity_layout_main"
         app:layout_constraintBottom_toTopOf="@id/view_bottom_nav"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"        />
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/view_bottom_nav"

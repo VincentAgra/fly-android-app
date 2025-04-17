@@ -2,80 +2,355 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_layout_search_flights"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv_user_departure_location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    android:id="@+id/activity_layout_search_flights"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:fitsSystemWindows="true"
+    android:background="#2EB4D1">
+
+
+    <include
+        android:id="@+id/activity_toolbar"
+        layout="@layout/custom_tool_bar"
+
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
 
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/et_enter_user_departure_location"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        android:layout_marginTop="@dimen/dmn_user_departure_location_tv"
-
-        android:text="@string/str_user_departure_location_tv"/>
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 
-    <EditText
-        android:id="@+id/et_enter_user_departure_location"
+    <ProgressBar
+        android:id="@+id/search_progress_bar"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        app:layout_constraintTop_toBottomOf="@id/tv_user_departure_location"
-        app:layout_constraintBottom_toTopOf="@id/tv_user_travel_destination"
+        android:visibility="gone"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        android:text="@string/str_enter_user_departure_location_et"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
-    <TextView
-        android:id="@+id/tv_user_travel_destination"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
 
-        app:layout_constraintTop_toBottomOf="@id/et_enter_user_departure_location"
-        app:layout_constraintBottom_toTopOf="@id/et_enter_user_travel_destination"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:fillViewport="true"
+
+        app:layout_constraintTop_toBottomOf="@id/activity_toolbar"
+        app:layout_constraintBottom_toTopOf="@id/view_bottom_nav"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        android:text="@string/str_user_travel_destination_tv"/>
 
-    <EditText
-        android:id="@+id/et_enter_user_travel_destination"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
-        app:layout_constraintTop_toBottomOf="@id/tv_user_travel_destination"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+            android:paddingBottom="16dp">
 
-        android:text="@string/str_enter_user_departure_location_et"/>
 
-    <Button
-        android:id="@+id/btn_submit_user_details"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/tv_user_departure_location"
 
-        app:layout_constraintTop_toBottomOf="@id/et_enter_user_travel_destination"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        android:text="@string/str_submit_user_details_btn"/>
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:layout_marginTop="@dimen/dmn_user_departure_location_tv_marginTop"
+
+                android:text="@string/str_user_departure_location_tv"/>
+
+
+            <EditText
+                android:id="@+id/et_enter_user_departure_location"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintTop_toBottomOf="@id/tv_user_departure_location"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:hint="@string/str_enter_user_departure_location_et" />
+
+
+            <TextView
+                android:id="@+id/tv_user_travel_destination"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintTop_toBottomOf="@id/et_enter_user_departure_location"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:text="@string/str_user_travel_destination_tv"/>
+
+
+            <EditText
+                android:id="@+id/et_enter_user_travel_destination"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintTop_toBottomOf="@id/tv_user_travel_destination"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:hint="@string/str_enter_user_departure_location_et"/>
+
+
+            <TextView
+                android:id="@+id/tv_user_cabin_class"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintTop_toBottomOf="@id/et_enter_user_travel_destination"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:text="ENTER CABIN CLASS"/>
+
+
+            <EditText
+                android:id="@+id/et_enter_user_cabin_class"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintTop_toBottomOf="@id/tv_user_cabin_class"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:hint="ADD DETAILS HERE"/>
+
+
+            <TextView
+                android:id="@+id/tv_user_currency"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintTop_toBottomOf="@id/et_enter_user_cabin_class"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:text="ENTER CURRENCY"/>
+
+
+            <EditText
+                android:id="@+id/et_enter_user_currency"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintTop_toBottomOf="@id/tv_user_currency"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:hint="ADD DETAILS HERE"/>
+
+
+            <TextView
+                android:id="@+id/tv_number_of_adults"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintTop_toBottomOf="@id/et_enter_user_currency"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="200dp"
+
+                android:text="ADULTS"/>
+
+
+            <EditText
+                android:id="@+id/et_number_of_adults_input"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintTop_toBottomOf="@id/tv_number_of_adults"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="200dp"
+
+                android:text=""
+
+                android:inputType="number"/>
+
+
+            <TextView
+                android:id="@+id/tv_number_of_children"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintTop_toBottomOf="@id/et_enter_user_currency"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="0dp"
+
+                android:text="CHILDREN"/>
+
+
+            <EditText
+                android:id="@+id/et_number_of_children_input"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintTop_toBottomOf="@id/tv_number_of_adults"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="0dp"
+
+                android:text=""
+
+                android:inputType="number"/>
+
+
+            <TextView
+                android:id="@+id/tv_number_of_infant"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintTop_toBottomOf="@id/et_enter_user_currency"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="200dp"
+
+                android:text="INFANTS"/>
+
+
+            <EditText
+                android:id="@+id/et_number_of_infant_input"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintTop_toBottomOf="@id/tv_number_of_adults"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="200dp"
+
+                android:text=""
+
+                android:inputType="number"/>
+
+
+            <TextView
+                android:id="@+id/tv_select_date_departure"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintTop_toBottomOf="@id/tv_number_of_adults"
+                app:layout_constraintBottom_toTopOf="@id/tv_select_date_departure"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:layout_marginTop="@dimen/dmn_select_date_tv_marginTop"
+
+                android:text="@string/str_select_date_departure_tv"/>
+
+
+            <DatePicker
+                android:id="@+id/date_picker_departure"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintTop_toBottomOf="@id/tv_select_date_departure"
+                app:layout_constraintBottom_toTopOf="@id/tv_select_date_return"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner"/>
+
+
+            <TextView
+                android:id="@+id/tv_select_date_return"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintTop_toBottomOf="@id/date_picker_departure"
+                app:layout_constraintBottom_toTopOf="@id/date_picker_return"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:layout_marginTop="0dp"
+
+                android:text="SELECT DATE RETURN"/>
+
+
+            <DatePicker
+                android:id="@+id/date_picker_return"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintTop_toBottomOf="@id/date_picker_return"
+                app:layout_constraintBottom_toTopOf="@id/btn_submit_user_details"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:layout_marginTop="10dp"
+
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner"/>
+
+
+            <Button
+                android:id="@+id/btn_submit_user_details"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintTop_toBottomOf="@id/date_picker_return"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:layout_marginTop="16dp"
+                android:text="@string/str_submit_user_details_btn"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/view_bottom_nav"
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        app:layout_constraintBottom_toBottomOf="@id/activity_layout_search_flights"
-
+        app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_nav_menu" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
